@@ -187,6 +187,10 @@ const ScrollPicker: { <ItemT extends string | number>(props: ScrollPickerProps<I
     timer && clearTimeout(timer);
   };
 
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    onScrollEndDrag(e)
+   }
+
   const onScrollEndDrag = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     setDragStarted(false);
 
@@ -253,9 +257,6 @@ const ScrollPicker: { <ItemT extends string | number>(props: ScrollPickerProps<I
           onMomentumScrollEnd(e)
         }
         onScrollBeginDrag={(_e: any) => onScrollBeginDrag()}
-        onScrollEndDrag={(e: NativeSyntheticEvent<NativeScrollEvent>) =>
-          onScrollEndDrag(e)
-        }
       >
         {header}
         {props.dataSource.map(renderItem)}
