@@ -256,6 +256,7 @@ const ScrollPicker: { <ItemT extends string | number>(props: ScrollPickerProps<I
         onMomentumScrollEnd={(e: NativeSyntheticEvent<NativeScrollEvent>) =>
           onMomentumScrollEnd(e)
         }
+        onScroll={onScroll}
         onScrollBeginDrag={(_e: any) => onScrollBeginDrag()}
       >
         {header}
